@@ -551,7 +551,6 @@ Doorkeeper::JWT.configure do
   # about the user. Defaults to a randomly generated token in a hash:
   #     { token: "RANDOM-TOKEN" }
   token_payload do |opts|
-    debugger
     user = User.find(opts[:resource_owner_id])
 
     {
