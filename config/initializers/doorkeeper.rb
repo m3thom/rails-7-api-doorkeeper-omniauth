@@ -30,7 +30,7 @@ Doorkeeper.configure do
           strategy_class: OmniAuth::Strategies::GoogleOauth2,
           client_id: ENV["GOOGLE_CLIENT_ID"],
           client_secret: ENV["GOOGLE_CLIENT_SECRET"],
-          client_options: { skip_image_info: false },
+          client_options: { skip_image_info: false, skip_jwt: true },
           assertion: params.fetch(:assertion)
       ).auth_hash rescue nil
       unless auth.nil?
